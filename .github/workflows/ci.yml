@@ -23,8 +23,5 @@ jobs:
       - name: Run test
         run: echo "No test yet"
       
-      - name: Run app
-        run: npm start 
-
       - name: Build Docker image
         run: docker build -t node-ci-demo .
