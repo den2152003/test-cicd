@@ -1,25 +1,16 @@
 pipeline {
     agent any
-
     stages {
-
-        stage('Clone') {
-            steps {
-                git 'https://github.com/den2152003/test-cicd'
-            }
-        }
-
+        // Bỏ stage Clone vì Jenkins tự làm rồi
         stage('Install') {
             steps {
                 sh 'npm install'
             }
         }
-
-        stage('Run') {
+        stage('Lint') {
             steps {
                 sh 'npm run lint'
             }
         }
-
     }
 }
