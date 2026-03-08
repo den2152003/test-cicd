@@ -21,7 +21,7 @@ jobs:
         run: npm install
 
       - name: Run test
-        run: echo "No test yet"
+        run: npm run lint
       
       - name: Build Docker image
         run: docker build -t node-ci-demo .
