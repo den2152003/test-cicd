@@ -1,16 +1,29 @@
 pipeline {
     agent any
+
+    tools {
+        nodejs "node20"
+    }
+
     stages {
-        // Bỏ stage Clone vì Jenkins tự làm rồi
+
+        stage('Clone') {
+            steps {
+                git 'https://github.com/den2152003/test-cicd'
+            }
+        }
+
         stage('Install') {
             steps {
                 sh 'npm install'
             }
         }
-        stage('Lint') {
+
+        stage('Run') {
             steps {
-                sh 'npm run lint'
+                sh 'node index.js'
             }
         }
+
     }
 }
