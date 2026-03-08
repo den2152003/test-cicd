@@ -7,11 +7,6 @@ pipeline {
 
     stages {
 
-        stage('Clone') {
-            steps {
-                git 'https://github.com/den2152003/test-cicd'
-            }
-        }
 
         stage('Install') {
             steps {
@@ -19,9 +14,9 @@ pipeline {
             }
         }
 
-        stage('Run') {
+        stage('lint') {
             steps {
-                sh 'node index.js'
+                sh 'npm run lint'
             }
         }
 
