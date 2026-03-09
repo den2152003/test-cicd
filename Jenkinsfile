@@ -11,7 +11,7 @@ pipeline {
             steps {
                 // sh 'npm install'
                 echo 'Skipping npm install for faster builds'
-                echo 'step in Install stage'
+                echo 'step in Install stage 123'
             }
         }
 
